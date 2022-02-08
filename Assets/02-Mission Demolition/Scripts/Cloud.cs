@@ -14,7 +14,7 @@ public class Cloud : MonoBehaviour
 	public Vector2 	sphereScaleRangeZ = new Vector2(2,4);
 	public float 	scaleYMin = 2f;
 
-	private List<GameObject> 	spheres;
+	private List<GameObject> spheres;
 
     // Start is called before the first frame update
     void Start()

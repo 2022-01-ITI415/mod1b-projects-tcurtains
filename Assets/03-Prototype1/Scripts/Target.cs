@@ -14,4 +14,13 @@ public class Target : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
     }
 
+    void Update () {
+        if (transform.position.x <= leftPoint.position.x) {
+            movingRight = true;
+        }
+        if (transform.position.x >= rightPoint.position.x) {
+            movingRight = false;
+        }
+    }
+
 }

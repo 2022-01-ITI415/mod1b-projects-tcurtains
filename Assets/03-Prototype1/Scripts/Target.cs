@@ -23,4 +23,12 @@ public class Target : MonoBehaviour {
         }
     }
 
+    void FixedUpdate () {
+        if (movingRight) {
+            rb.MovePosition(rb.position + new Vector2(rightPoint.position.x + speed, 0f) * Time.fixedDeltaTime);
+        } else {
+            rb.MovePosition(rb.position + new Vector2(leftPoint.position.x - speed, 0f) * Time.fixedDeltaTime);
+
+        }
+    }
 }

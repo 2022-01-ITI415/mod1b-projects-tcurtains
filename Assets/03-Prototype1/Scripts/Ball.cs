@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour {
     public float speed;
@@ -12,5 +13,11 @@ public class Ball : MonoBehaviour {
 
     void FixedUpdate () {
         rb.velocity = new Vector2(0f, speed * Time.fixedDeltaTime);
+    }
+
+    void OnCollisionEnter2D (Collision2D col) {
+        if (col.gameObject.tag == "BackWall") {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

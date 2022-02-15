@@ -9,6 +9,7 @@ TagManager:
   - Nerf
   - Target
   - Ball
+  - BackWall
   layers:
   - Default
   - TransparentFX

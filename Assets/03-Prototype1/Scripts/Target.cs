@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Target : MonoBehaviour {
+    public int score = 0;
     public float speed = 2f;
     public Transform leftPoint;
     public Transform rightPoint;
@@ -29,6 +30,14 @@ public class Target : MonoBehaviour {
         } else {
             rb.MovePosition(rb.position + new Vector2(leftPoint.position.x - speed, 0f) * Time.fixedDeltaTime);
 
+        }
+    }
+
+    void OnCollisionEnter2D (Collider2D col) {
+        if (col.gameObject.tag == "Ball") {
+            score++;
+            speed += 0.25f;
+            Destroy(col.gameObject);
         }
     }
 }

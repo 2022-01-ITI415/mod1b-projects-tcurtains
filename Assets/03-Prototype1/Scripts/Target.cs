@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Target : MonoBehaviour {
     public int score = 0;
+    public Text scoreUI;
     public float speed = 2f;
     public Transform leftPoint;
     public Transform rightPoint;
@@ -33,9 +35,10 @@ public class Target : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter2D (Collider2D col) {
+    void OnCollisionEnter2D (Collision2D col) {
         if (col.gameObject.tag == "Ball") {
             score++;
+            scoreUI.text = "My Score: " + score;
             speed += 0.25f;
             Destroy(col.gameObject);
         }

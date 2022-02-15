@@ -351,6 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  scoreUI: {fileID: 1738472273}
   speed: 1
   leftPoint: {fileID: 1302205472}
   rightPoint: {fileID: 1496193466}
